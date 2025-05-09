@@ -11,6 +11,7 @@ advcpmv-0.5-8.21.patch was the last patch released by the author (on February 14
 ## Build instructions
 
 Requires the following dependencies:
+ - curl
  - patch
  - gcc
 
@@ -18,11 +19,11 @@ Run the following command to download, patch, compile coreutils and generate the
 
 Bash:
 ```
-curl https://raw.githubusercontent.com/jarun/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh && (cd advcpmv && sh install.sh)
+curl https://raw.githubusercontent.com/theincompletedetective/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh && (cd advcpmv && sh install.sh)
 ```
 Fish:
 ```
-curl https://raw.githubusercontent.com/jarun/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh; and begin; cd advcpmv; and sh install.sh; end
+curl https://raw.githubusercontent.com/theincompletedetective/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh; and begin; cd advcpmv; and sh install.sh; end
 ```
 
 To install an older version than the latest one, you can specify the version by passing it as an argument to the install script (at the end of the command, before the closing parenthesis). For example, if you want to install `advcpmv-0.8-8.32.patch` you would modify the command above like so.
@@ -49,19 +50,19 @@ Progress bar does not work with reflink (introduced v9.0 onwards). So reflink is
 You can install the binaries and create aliases for bash (or whatever you use)
 
 ```
-sudo mv ./advcpmv/advcp /usr/local/bin/
-sudo mv ./advcpmv/advmv /usr/local/bin/
+sudo mv ./advcpmv/advcp /usr/local/bin/cpg
+sudo mv ./advcpmv/advmv /usr/local/bin/mvg
 ```
 
 Bash:
 ```
-echo alias cp '/usr/local/bin/advcp -g' >> ~/.bashrc
-echo alias mv '/usr/local/bin/advmv -g' >> ~/.bashrc
+echo alias cp '/usr/local/bin/cpg -g' >> ~/.bashrc
+echo alias mv '/usr/local/bin/mvg -g' >> ~/.bashrc
 ```
 Fish:
 ```
-echo alias cp '/usr/local/bin/advcp -g' >> ~/.config/fish/config.fish
-echo alias mv '/usr/local/bin/advmv -g' >> ~/.config/fish/config.fish
+echo alias cp '/usr/local/bin/cpg -g' >> ~/.config/fish/config.fish
+echo alias mv '/usr/local/bin/mvg -g' >> ~/.config/fish/config.fish
 ```
 ```
 
